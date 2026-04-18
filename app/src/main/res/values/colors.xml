@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="risk_high">#E53935</color>
+    <color name="risk_high_bg">#FFEBEE</color>
+    <color name="risk_medium">#F57C00</color>
+    <color name="risk_medium_bg">#FFF3E0</color>
+    <color name="risk_low">#388E3C</color>
+    <color name="risk_low_bg">#E8F5E9</color>
+</resources>

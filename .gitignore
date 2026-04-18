@@ -1,0 +1,19 @@
+# Local config — never commit
+local.properties
+
+# Build outputs
+build/
+app/build/
+.gradle/
+
+# Android Studio
+.idea/
+*.iml
+
+# Keystore files
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db

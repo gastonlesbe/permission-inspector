@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Permission Inspector</string>
+    <string name="search_hint">Search apps…</string>
+    <string name="open_settings">Open app settings</string>
+    <string name="risk_high">High risk</string>
+    <string name="risk_medium">Medium</string>
+    <string name="risk_low">Low risk</string>
+    <string name="device_wide">Device-wide settings</string>
+</resources>

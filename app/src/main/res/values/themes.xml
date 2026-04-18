@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.PermissionInspector" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/risk_low</item>
+    </style>
+</resources>
