@@ -1,4 +1,4 @@
-package com.lesbeguerisgaston.permissioninspector.model;
+package com.griscal.permissioninspector.model;
 
 public class PermissionInfo {
     public String name;        // Display name e.g. "Camera"

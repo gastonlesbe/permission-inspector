@@ -1,4 +1,4 @@
-package com.lesbeguerisgaston.permissioninspector.adapter;
+package com.griscal.permissioninspector.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lesbeguerisgaston.permissioninspector.R;
-import com.lesbeguerisgaston.permissioninspector.model.PermissionInfo;
+import com.griscal.permissioninspector.R;
+import com.griscal.permissioninspector.model.PermissionInfo;
 
 import java.util.List;
 

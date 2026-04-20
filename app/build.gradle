@@ -2,22 +2,43 @@ plugins {
     id 'com.android.application'
 }
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
-    namespace 'com.lesbeguerisgaston.permissioninspector'
-    compileSdk 34
+    namespace 'com.griscal.permissioninspector'
+    compileSdk 35
 
     defaultConfig {
-        applicationId "com.lesbeguerisgaston.permissioninspector"
+        applicationId "com.griscal.permissioninspector"
         minSdk 26
-        targetSdk 34
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
 
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
         }
     }
 
@@ -34,9 +55,6 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    // AdMob (interstitial)
+    // AdMob
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
-
-    // Appodeal banner — add when you have your account key
-    // implementation 'com.appodeal.ads:sdk:3.3.1'
 }

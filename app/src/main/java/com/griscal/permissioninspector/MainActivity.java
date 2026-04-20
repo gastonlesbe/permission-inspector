@@ -1,4 +1,4 @@
-package com.lesbeguerisgaston.permissioninspector;
+package com.griscal.permissioninspector;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+
+import com.google.android.material.chip.ChipGroup;
+import com.griscal.permissioninspector.adapter.AppListAdapter.SortOrder;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,10 +21,10 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
-import com.lesbeguerisgaston.permissioninspector.adapter.AppListAdapter;
-import com.lesbeguerisgaston.permissioninspector.model.AppInfo;
-import com.lesbeguerisgaston.permissioninspector.util.DeepLinkHelper;
-import com.lesbeguerisgaston.permissioninspector.util.PermissionHelper;
+import com.griscal.permissioninspector.adapter.AppListAdapter;
+import com.griscal.permissioninspector.model.AppInfo;
+import com.griscal.permissioninspector.util.DeepLinkHelper;
+import com.griscal.permissioninspector.util.PermissionHelper;
 
 import java.util.List;
 
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setupAdMob();
         setupRecyclerView();
         setupSearch();
+        setupSort();
         loadApps();
     }
 
@@ -120,6 +124,17 @@ public class MainActivity extends AppCompatActivity {
                 adapter.filter(s.toString());
             }
             @Override public void afterTextChanged(Editable s) {}
+        });
+    }
+
+    private void setupSort() {
+        ChipGroup chipGroup = findViewById(R.id.sortChipGroup);
+        chipGroup.setOnCheckedStateChangeListener((group, checkedIds) -> {
+            if (checkedIds.isEmpty()) return;
+            int id = checkedIds.get(0);
+            if (id == R.id.chipPermissions) adapter.sort(SortOrder.PERMISSIONS);
+            else if (id == R.id.chipName)    adapter.sort(SortOrder.NAME);
+            else if (id == R.id.chipSize)    adapter.sort(SortOrder.SIZE);
         });
     }
 

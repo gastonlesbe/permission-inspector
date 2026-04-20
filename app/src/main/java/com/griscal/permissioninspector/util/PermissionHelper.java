@@ -1,12 +1,12 @@
-package com.lesbeguerisgaston.permissioninspector.util;
+package com.griscal.permissioninspector.util;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.lesbeguerisgaston.permissioninspector.model.AppInfo;
-import com.lesbeguerisgaston.permissioninspector.model.PermissionInfo;
+import com.griscal.permissioninspector.model.AppInfo;
+import com.griscal.permissioninspector.model.PermissionInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -137,15 +137,61 @@ public class PermissionHelper {
             String label = pkg.applicationInfo.loadLabel(pm).toString();
             android.graphics.drawable.Drawable icon = pkg.applicationInfo.loadIcon(pm);
 
-            result.add(new AppInfo(label, pkg.packageName, icon, permList));
+            String installSize = "Unknown";
+            try {
+                java.io.File apk = new java.io.File(pkg.applicationInfo.sourceDir);
+                long bytes = apk.length();
+                if (bytes > 1024 * 1024) {
+                    installSize = String.format("%.0f MB", bytes / (1024.0 * 1024.0));
+                } else {
+                    installSize = String.format("%.0f KB", bytes / 1024.0);
+                }
+            } catch (Exception ignored) {}
+
+            String installDate = formatDate(pkg.firstInstallTime);
+            String lastUpdated = formatRelativeTime(pkg.lastUpdateTime);
+            String versionName = pkg.versionName != null ? pkg.versionName : "—";
+            String category = getCategoryLabel(pkg.applicationInfo.category);
+
+            result.add(new AppInfo(label, pkg.packageName, icon, permList,
+                installSize, installDate, lastUpdated, versionName, category));
         }
 
-        // Sort: highest risk first, then alphabetical
         result.sort((a, b) -> {
             if (b.riskLevel != a.riskLevel) return b.riskLevel - a.riskLevel;
             return a.appName.compareToIgnoreCase(b.appName);
         });
 
         return result;
+    }
+
+    private static String formatDate(long millis) {
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("MMM yyyy", java.util.Locale.getDefault());
+        return sdf.format(new java.util.Date(millis));
+    }
+
+    private static String formatRelativeTime(long millis) {
+        long diff = System.currentTimeMillis() - millis;
+        long days  = diff / (1000 * 60 * 60 * 24);
+        if (days == 0)  return "today";
+        if (days == 1)  return "yesterday";
+        if (days < 30)  return days + " days ago";
+        if (days < 365) return (days / 30) + " mo ago";
+        return (days / 365) + " yr ago";
+    }
+
+    private static String getCategoryLabel(int category) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) return "App";
+        switch (category) {
+            case android.content.pm.ApplicationInfo.CATEGORY_GAME:          return "Game";
+            case android.content.pm.ApplicationInfo.CATEGORY_AUDIO:         return "Music";
+            case android.content.pm.ApplicationInfo.CATEGORY_VIDEO:         return "Video";
+            case android.content.pm.ApplicationInfo.CATEGORY_IMAGE:         return "Photos";
+            case android.content.pm.ApplicationInfo.CATEGORY_SOCIAL:        return "Social";
+            case android.content.pm.ApplicationInfo.CATEGORY_NEWS:          return "News";
+            case android.content.pm.ApplicationInfo.CATEGORY_MAPS:          return "Navigation";
+            case android.content.pm.ApplicationInfo.CATEGORY_PRODUCTIVITY:  return "Productivity";
+            default:                                                          return "App";
+        }
     }
 }

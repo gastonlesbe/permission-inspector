@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="risk_high">#E53935</color>
+    <!-- Griscal Design System — Light -->
+    <color name="brand_primary">#023c69</color>
+    <color name="brand_primary_dark">#011f3a</color>
+    <color name="brand_accent">#0ecfbe</color>
+    <color name="colorBackground">#F5F7FA</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#8a8fa8</color>
+    <color name="colorStripe">#0ecfbe</color>
+
+    <!-- Perm badge -->
+    <color name="perm_badge_bg">#E0FFF8</color>
+    <color name="perm_badge_text">#023c69</color>
+
+    <!-- Risk palette -->
+    <color name="risk_high">#C62828</color>
     <color name="risk_high_bg">#FFEBEE</color>
-    <color name="risk_medium">#F57C00</color>
+    <color name="risk_medium">#E65100</color>
     <color name="risk_medium_bg">#FFF3E0</color>
-    <color name="risk_low">#388E3C</color>
+    <color name="risk_low">#2E7D32</color>
     <color name="risk_low_bg">#E8F5E9</color>
 </resources>

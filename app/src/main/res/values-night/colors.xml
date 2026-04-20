@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Griscal Design System — Dark -->
+    <color name="brand_primary">#161b27</color>
+    <color name="brand_primary_dark">#0f1117</color>
+    <color name="brand_accent">#0ecfbe</color>
+    <color name="colorBackground">#0f1117</color>
+    <color name="colorSurface">#161b27</color>
+    <color name="colorOnPrimary">#0ecfbe</color>
+    <color name="colorTextSecondary">#8a8fa8</color>
+    <color name="colorStripe">#0ecfbe</color>
+
+    <!-- Perm badge -->
+    <color name="perm_badge_bg">#0f2a28</color>
+    <color name="perm_badge_text">#0ecfbe</color>
+
+    <!-- Risk palette (slightly adjusted for dark) -->
+    <color name="risk_high">#EF9A9A</color>
+    <color name="risk_high_bg">#3E1212</color>
+    <color name="risk_medium">#FFCC80</color>
+    <color name="risk_medium_bg">#3E2400</color>
+    <color name="risk_low">#A5D6A7</color>
+    <color name="risk_low_bg">#1A3A1A</color>
+</resources>

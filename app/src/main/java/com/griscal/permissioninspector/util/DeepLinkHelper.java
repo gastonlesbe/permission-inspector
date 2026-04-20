@@ -1,4 +1,4 @@
-package com.lesbeguerisgaston.permissioninspector.util;
+package com.griscal.permissioninspector.util;
 
 import android.content.Context;
 import android.content.Intent;

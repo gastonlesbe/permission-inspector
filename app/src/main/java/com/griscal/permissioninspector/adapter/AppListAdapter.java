@@ -1,4 +1,4 @@
-package com.lesbeguerisgaston.permissioninspector.adapter;
+package com.griscal.permissioninspector.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lesbeguerisgaston.permissioninspector.R;
-import com.lesbeguerisgaston.permissioninspector.model.AppInfo;
+import com.griscal.permissioninspector.R;
+import com.griscal.permissioninspector.model.AppInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,42 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.ViewHold
     public void setData(List<AppInfo> apps) {
         allApps = new ArrayList<>(apps);
         filtered = new ArrayList<>(apps);
+        applySort(allApps);
+        applySort(filtered);
         notifyDataSetChanged();
+    }
+
+    public enum SortOrder { PERMISSIONS, NAME, SIZE }
+
+    private SortOrder currentSort = SortOrder.PERMISSIONS;
+
+    public void sort(SortOrder order) {
+        currentSort = order;
+        applySort(filtered);
+        applySort(allApps);
+        notifyDataSetChanged();
+    }
+
+    private void applySort(java.util.List<AppInfo> list) {
+        switch (currentSort) {
+            case PERMISSIONS:
+                list.sort((a, b) -> b.permissions.size() - a.permissions.size());
+                break;
+            case NAME:
+                list.sort((a, b) -> a.appName.compareToIgnoreCase(b.appName));
+                break;
+            case SIZE:
+                list.sort((a, b) -> parseSizeBytes(b.installSize) - parseSizeBytes(a.installSize));
+                break;
+        }
+    }
+
+    private int parseSizeBytes(String size) {
+        try {
+            if (size.endsWith(" MB")) return (int)(Float.parseFloat(size.replace(" MB", "")) * 1024);
+            if (size.endsWith(" KB")) return (int) Float.parseFloat(size.replace(" KB", ""));
+        } catch (NumberFormatException ignored) {}
+        return 0;
     }
 
     public void filter(String query) {
@@ -51,6 +86,7 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.ViewHold
                 }
             }
         }
+        applySort(filtered);
         notifyDataSetChanged();
     }
 
@@ -66,23 +102,12 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.ViewHold
         AppInfo app = filtered.get(position);
         holder.icon.setImageDrawable(app.icon);
         holder.appName.setText(app.appName);
-        holder.permSummary.setText(app.permissions.size() + " permissions");
+        holder.appCategory.setText(app.category);
+        holder.appSize.setText(app.installSize);
+        holder.appUpdated.setText("Updated " + app.lastUpdated);
+        holder.appVersion.setText("v" + app.versionName);
 
-        String[] riskLabels = {"Low risk", "Medium", "High risk"};
-        int[] riskColors = {
-            context.getResources().getColor(R.color.risk_low, context.getTheme()),
-            context.getResources().getColor(R.color.risk_medium, context.getTheme()),
-            context.getResources().getColor(R.color.risk_high, context.getTheme())
-        };
-        int[] riskBgColors = {
-            context.getResources().getColor(R.color.risk_low_bg, context.getTheme()),
-            context.getResources().getColor(R.color.risk_medium_bg, context.getTheme()),
-            context.getResources().getColor(R.color.risk_high_bg, context.getTheme())
-        };
-
-        holder.riskBadge.setText(riskLabels[app.riskLevel]);
-        holder.riskBadge.setTextColor(riskColors[app.riskLevel]);
-        holder.riskBadge.setBackgroundColor(riskBgColors[app.riskLevel]);
+        holder.permBadge.setText(app.permissions.size() + " perms");
 
         holder.itemView.setOnClickListener(v -> listener.onAppClick(app));
     }
@@ -94,14 +119,17 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.ViewHold
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView icon;
-        TextView appName, permSummary, riskBadge;
+        TextView appName, appCategory, appSize, appUpdated, appVersion, permBadge;
 
         ViewHolder(View itemView) {
             super(itemView);
             icon = itemView.findViewById(R.id.appIcon);
             appName = itemView.findViewById(R.id.appName);
-            permSummary = itemView.findViewById(R.id.permSummary);
-            riskBadge = itemView.findViewById(R.id.riskBadge);
+            appCategory = itemView.findViewById(R.id.appCategory);
+            appSize = itemView.findViewById(R.id.appSize);
+            appUpdated = itemView.findViewById(R.id.appUpdated);
+            appVersion = itemView.findViewById(R.id.appVersion);
+            permBadge = itemView.findViewById(R.id.permBadge);
         }
     }
 }
