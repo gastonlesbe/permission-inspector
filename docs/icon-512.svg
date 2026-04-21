@@ -1,0 +1,20 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#023c69"/>
+
+  <!-- Shield body -->
+  <path d="M256 96 L368 140 L368 272 Q368 368 256 424 Q144 368 144 272 L144 140 Z"
+        fill="#0ecfbe" opacity="0.15"/>
+  <path d="M256 96 L368 140 L368 272 Q368 368 256 424 Q144 368 144 272 L144 140 Z"
+        fill="none" stroke="#0ecfbe" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- Magnifying glass circle -->
+  <circle cx="245" cy="248" r="56" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Magnifying glass handle -->
+  <line x1="287" y1="290" x2="336" y2="340"
+        stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Teal dot accent inside lens -->
+  <circle cx="245" cy="248" r="18" fill="#0ecfbe" opacity="0.7"/>
+</svg>
