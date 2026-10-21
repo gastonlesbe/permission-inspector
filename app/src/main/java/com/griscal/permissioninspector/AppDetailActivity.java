@@ -12,6 +12,7 @@ import com.google.android.material.button.MaterialButton;
 import com.griscal.permissioninspector.adapter.PermissionAdapter;
 import com.griscal.permissioninspector.model.AppInfo;
 import com.griscal.permissioninspector.util.DeepLinkHelper;
+import com.griscal.permissioninspector.util.InsetsHelper;
 import com.griscal.permissioninspector.util.PermissionHelper;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public class AppDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_detail);
+        InsetsHelper.applyTopInset(findViewById(R.id.detailHeader));
+        InsetsHelper.applyBottomInset(findViewById(R.id.detailScroll));
 
         String packageName = getIntent().getStringExtra("package_name");
         if (packageName == null) { finish(); return; }
@@ -61,15 +64,6 @@ public class AppDetailActivity extends AppCompatActivity {
         settingsBtn.setOnClickListener(v ->
             DeepLinkHelper.openAppSettings(this, packageName));
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(app.appName);
-        }
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
+        findViewById(R.id.backBtn).setOnClickListener(v -> finish());
     }
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Production ad unit IDs. Debug builds override these with Google's sample IDs in
+     src/debug/res/values/ads.xml so emulator/dev runs never request live ads. -->
+<resources>
+    <string name="admob_interstitial_id" translatable="false">ca-app-pub-9841764898906750/2815948794</string>
+</resources>

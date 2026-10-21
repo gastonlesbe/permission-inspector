@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DEBUG ONLY: Google's official sample interstitial ID, so debug builds (incl. automated
+     emulator screenshots) never serve or count live ads. (Appodeal is already skipped in
+     debug — see MainActivity.setupAppodealBanner.) -->
+<resources>
+    <string name="admob_interstitial_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+</resources>

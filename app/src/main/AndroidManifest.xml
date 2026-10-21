@@ -16,10 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PermissionInspector">
 
-        <!-- AdMob App ID — replace with your real ID before release -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-9841764898906750~4863527639" />
 
         <activity
             android:name=".MainActivity"

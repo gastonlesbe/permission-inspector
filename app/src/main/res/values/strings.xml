@@ -6,4 +6,10 @@
     <string name="risk_medium">Medium</string>
     <string name="risk_low">Low risk</string>
     <string name="device_wide">Device-wide settings</string>
+    <string name="menu_theme_dark">Modo Oscuro</string>
+    <string name="menu_theme_light">Modo Claro</string>
+    <string name="menu_contact">Contacto</string>
+    <string name="menu_our_apps">Nuestras Apps</string>
+    <string name="shareapp">Share This App</string>
+    <string name="rateme">Rate this App</string>
 </resources>

@@ -19,3 +19,11 @@ keystore/
 # OS
 .DS_Store
 Thumbs.db
+
+# Signed builds, recordings, heap dumps
+*.aab
+*.apk
+app/release/
+videos/
+Videos/
+*.hprof
