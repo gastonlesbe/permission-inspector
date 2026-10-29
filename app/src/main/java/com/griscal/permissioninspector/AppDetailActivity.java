@@ -40,7 +40,7 @@ public class AppDetailActivity extends AppCompatActivity {
         ((ImageView) findViewById(R.id.appIcon)).setImageDrawable(app.icon);
         ((TextView) findViewById(R.id.appName)).setText(app.appName);
         ((TextView) findViewById(R.id.permCount)).setText(
-            app.permissions.size() + " permissions granted");
+            getString(R.string.permissions_granted, app.permissions.size()));
 
         // Info card
         ((TextView) findViewById(R.id.valSize)).setText(app.installSize);

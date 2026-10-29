@@ -12,4 +12,146 @@
     <string name="menu_our_apps">Nuestras Apps</string>
     <string name="shareapp">Share This App</string>
     <string name="rateme">Rate this App</string>
+
+    <!-- Extracted from code/layouts 2026-10-29 (default text kept verbatim) -->
+    <string name="open_settings_arrow">Open settings →</string>
+    <string name="cd_back">Back</string>
+    <string name="app_info_header">APP INFO</string>
+    <string name="label_size">Size</string>
+    <string name="label_category">Category</string>
+    <string name="label_installed">Installed</string>
+    <string name="label_last_updated">Last updated</string>
+    <string name="label_version">Version</string>
+    <string name="label_permissions">Permissions</string>
+    <string name="label_order_by">Order by</string>
+    <string name="label_name">Name</string>
+    <string name="device_wide_header">DEVICE-WIDE SETTINGS</string>
+    <string name="quick_location">Location</string>
+    <string name="all_apps_arrow">All apps →</string>
+    <string name="emoji_microphone" translatable="false">🎤</string>
+    <string name="emoji_location" translatable="false">📍</string>
+    <string name="separator_dot" translatable="false">" · "</string>
+    <string name="chevron_right" translatable="false">›</string>
+    <string name="version_format" translatable="false">v%1$s</string>
+    <string name="version_fallback" translatable="false">v1.3</string>
+    <string name="version_placeholder" translatable="false">v</string>
+    <string name="version_unknown" translatable="false">—</string>
+    <string name="app_updated">Updated %1$s</string>
+    <string name="perm_count_badge">%1$d perms</string>
+    <string name="permissions_granted">%1$d permissions granted</string>
+    <string name="mic_settings_hint">Buscá \"Acceso al micrófono\" y desactivalo.</string>
+    <string name="mic_toggle_requires_android12">El control global del micrófono requiere Android 12 o superior.</string>
+    <string name="size_unknown">Unknown</string>
+    <string name="size_mb">%1$.0f MB</string>
+    <string name="size_kb">%1$.0f KB</string>
+    <string name="time_today">today</string>
+    <string name="time_yesterday">yesterday</string>
+    <string name="time_days_ago">%1$d days ago</string>
+    <string name="time_months_ago">%1$d mo ago</string>
+    <string name="time_years_ago">%1$d yr ago</string>
+    <string name="category_app">App</string>
+    <string name="category_game">Game</string>
+    <string name="category_music">Music</string>
+    <string name="category_video">Video</string>
+    <string name="category_photos">Photos</string>
+    <string name="category_social">Social</string>
+    <string name="category_news">News</string>
+    <string name="category_navigation">Navigation</string>
+    <string name="category_productivity">Productivity</string>
+
+    <!-- "Our apps" submenu -->
+    <string name="menu_app_carepal_pets">CarePal: Mascotas y Salud</string>
+    <string name="menu_app_carepal_cars">CarePal: Autos y Service</string>
+    <string name="menu_app_carepal_family">CarePal: Familia y Agenda</string>
+    <string name="menu_app_carepal_house">CarePal: Hogar y Mantenimiento</string>
+    <string name="menu_app_griscal">Griscal: Hogar y Familia</string>
+    <string name="menu_app_gpsalert">GPS Alert – Location Alarm</string>
+    <string name="menu_app_milupa" translatable="false">MiLupa</string>
+    <string name="menu_app_milinterna" translatable="false">MiLinterna</string>
+
+    <!-- Permission catalog (name + plain-language description) -->
+    <string name="perm_camera">Camera</string>
+    <string name="perm_camera_desc">Can take photos and record video at any time while the app is open.</string>
+    <string name="perm_record_audio">Microphone</string>
+    <string name="perm_record_audio_desc">Can record audio — used for voice messages, calls, or background listening.</string>
+    <string name="perm_access_fine_location">Location (precise)</string>
+    <string name="perm_access_fine_location_desc">Knows your exact GPS position. Can track you to within a few meters.</string>
+    <string name="perm_access_coarse_location">Location (approximate)</string>
+    <string name="perm_access_coarse_location_desc">Knows your general area (city/neighborhood level) via Wi-Fi or cell towers.</string>
+    <string name="perm_access_background_location">Location (always — background)</string>
+    <string name="perm_access_background_location_desc">Tracks your location even when the app is not open or in use.</string>
+    <string name="perm_read_contacts">Contacts (read)</string>
+    <string name="perm_read_contacts_desc">Can read your full contact list including names, phones, and emails.</string>
+    <string name="perm_write_contacts">Contacts (write)</string>
+    <string name="perm_write_contacts_desc">Can add, edit, or delete entries in your contact list.</string>
+    <string name="perm_read_call_log">Call log (read)</string>
+    <string name="perm_read_call_log_desc">Can see your full call history — who you called and when.</string>
+    <string name="perm_write_call_log">Call log (write)</string>
+    <string name="perm_write_call_log_desc">Can add or modify entries in your call history.</string>
+    <string name="perm_call_phone">Make phone calls</string>
+    <string name="perm_call_phone_desc">Can dial phone numbers and make calls without asking you first.</string>
+    <string name="perm_read_sms">Read SMS</string>
+    <string name="perm_read_sms_desc">Can read all your text messages.</string>
+    <string name="perm_send_sms">Send SMS</string>
+    <string name="perm_send_sms_desc">Can send text messages from your number — potentially costing you money.</string>
+    <string name="perm_receive_sms">Receive SMS</string>
+    <string name="perm_receive_sms_desc">Can intercept incoming text messages before you see them.</string>
+    <string name="perm_read_external_storage">Storage (read)</string>
+    <string name="perm_read_external_storage_desc">Can read all files, photos, and documents on your device.</string>
+    <string name="perm_write_external_storage">Storage (write)</string>
+    <string name="perm_write_external_storage_desc">Can create, edit, or delete files on your device storage.</string>
+    <string name="perm_read_media_images">Photos</string>
+    <string name="perm_read_media_images_desc">Can access all photos stored on your device.</string>
+    <string name="perm_read_media_video">Videos</string>
+    <string name="perm_read_media_video_desc">Can access all video files stored on your device.</string>
+    <string name="perm_read_media_audio">Audio files</string>
+    <string name="perm_read_media_audio_desc">Can access all music and audio files on your device.</string>
+    <string name="perm_body_sensors">Body sensors</string>
+    <string name="perm_body_sensors_desc">Can read data from health sensors like heart rate monitors.</string>
+    <string name="perm_activity_recognition">Physical activity</string>
+    <string name="perm_activity_recognition_desc">Can detect when you are walking, running, cycling, or in a vehicle.</string>
+    <string name="perm_use_biometric">Biometrics</string>
+    <string name="perm_use_biometric_desc">Can request fingerprint or face authentication.</string>
+    <string name="perm_bluetooth">Bluetooth</string>
+    <string name="perm_bluetooth_desc">Can connect to and communicate with nearby Bluetooth devices.</string>
+    <string name="perm_bluetooth_scan">Bluetooth scan</string>
+    <string name="perm_bluetooth_scan_desc">Can scan for nearby Bluetooth devices — can be used to infer location.</string>
+    <string name="perm_bluetooth_connect">Bluetooth connect</string>
+    <string name="perm_bluetooth_connect_desc">Can connect to paired Bluetooth devices.</string>
+    <string name="perm_internet">Internet</string>
+    <string name="perm_internet_desc">Can send and receive data over the internet.</string>
+    <string name="perm_access_wifi_state">Wi-Fi state</string>
+    <string name="perm_access_wifi_state_desc">Can see which Wi-Fi networks are nearby — can be used to infer location.</string>
+    <string name="perm_post_notifications">Notifications</string>
+    <string name="perm_post_notifications_desc">Can show notifications on your screen and notification bar.</string>
+    <string name="perm_vibrate">Vibrate</string>
+    <string name="perm_vibrate_desc">Can make your phone vibrate — typically for notifications.</string>
+    <string name="perm_receive_boot_completed">Start on boot</string>
+    <string name="perm_receive_boot_completed_desc">Can launch itself automatically every time you restart your phone.</string>
+    <string name="perm_foreground_service">Foreground service</string>
+    <string name="perm_foreground_service_desc">Can run persistently in the background with a visible notification.</string>
+    <string name="perm_use_fingerprint">Fingerprint</string>
+    <string name="perm_use_fingerprint_desc">Can request fingerprint authentication.</string>
+    <string name="perm_flashlight">Flashlight</string>
+    <string name="perm_flashlight_desc">Can turn the camera flash LED on and off.</string>
+    <string name="perm_nfc">NFC</string>
+    <string name="perm_nfc_desc">Can read and write data via Near Field Communication (tap-to-pay, etc.).</string>
+    <string name="perm_read_phone_state">Phone state</string>
+    <string name="perm_read_phone_state_desc">Can read your phone number, network info, and unique device identifiers.</string>
+    <string name="perm_process_outgoing_calls">Outgoing calls</string>
+    <string name="perm_process_outgoing_calls_desc">Can see the number you are dialing before the call connects.</string>
+    <string name="perm_schedule_exact_alarm">Exact alarms</string>
+    <string name="perm_schedule_exact_alarm_desc">Can schedule tasks to run at precise times, even in the background.</string>
+    <string name="perm_use_exact_alarm">Exact alarms</string>
+    <string name="perm_use_exact_alarm_desc">Can set exact alarms — used for reminders and scheduled tasks.</string>
+    <string name="perm_manage_external_storage">Full storage access</string>
+    <string name="perm_manage_external_storage_desc">Can access ALL files on your device, including system folders.</string>
+    <string name="perm_system_alert_window">Draw over other apps</string>
+    <string name="perm_system_alert_window_desc">Can show content on top of any other app on your screen.</string>
+    <string name="perm_get_accounts">Account list</string>
+    <string name="perm_get_accounts_desc">Can see all Google and other accounts linked to your device.</string>
+    <string name="perm_write_calendar">Calendar (write)</string>
+    <string name="perm_write_calendar_desc">Can create, edit, or delete calendar events.</string>
+    <string name="perm_read_calendar">Calendar (read)</string>
+    <string name="perm_read_calendar_desc">Can read all your calendar events and appointments.</string>
 </resources>

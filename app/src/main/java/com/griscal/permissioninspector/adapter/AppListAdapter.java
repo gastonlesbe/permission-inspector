@@ -60,17 +60,9 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.ViewHold
                 list.sort((a, b) -> a.appName.compareToIgnoreCase(b.appName));
                 break;
             case SIZE:
-                list.sort((a, b) -> parseSizeBytes(b.installSize) - parseSizeBytes(a.installSize));
+                list.sort((a, b) -> Long.compare(b.installSizeBytes, a.installSizeBytes));
                 break;
         }
-    }
-
-    private int parseSizeBytes(String size) {
-        try {
-            if (size.endsWith(" MB")) return (int)(Float.parseFloat(size.replace(" MB", "")) * 1024);
-            if (size.endsWith(" KB")) return (int) Float.parseFloat(size.replace(" KB", ""));
-        } catch (NumberFormatException ignored) {}
-        return 0;
     }
 
     public void filter(String query) {
@@ -104,10 +96,10 @@ public class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.ViewHold
         holder.appName.setText(app.appName);
         holder.appCategory.setText(app.category);
         holder.appSize.setText(app.installSize);
-        holder.appUpdated.setText("Updated " + app.lastUpdated);
-        holder.appVersion.setText("v" + app.versionName);
+        holder.appUpdated.setText(context.getString(R.string.app_updated, app.lastUpdated));
+        holder.appVersion.setText(context.getString(R.string.version_format, app.versionName));
 
-        holder.permBadge.setText(app.permissions.size() + " perms");
+        holder.permBadge.setText(context.getString(R.string.perm_count_badge, app.permissions.size()));
 
         holder.itemView.setOnClickListener(v -> listener.onAppClick(app));
     }

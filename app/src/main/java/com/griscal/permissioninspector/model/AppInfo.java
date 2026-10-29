@@ -10,6 +10,7 @@ public class AppInfo {
     public int riskLevel;       // 0 = low, 1 = medium, 2 = high
 
     public String installSize;  // e.g. "82 MB"
+    public long installSizeBytes; // raw APK size, used for sorting
     public String installDate;  // e.g. "Jan 2022"
     public String lastUpdated;  // e.g. "2 days ago"
     public String versionName;  // e.g. "310.0.0"
@@ -18,7 +19,7 @@ public class AppInfo {
     public AppInfo(String appName, String packageName,
                    android.graphics.drawable.Drawable icon,
                    List<PermissionInfo> permissions,
-                   String installSize, String installDate,
+                   String installSize, long installSizeBytes, String installDate,
                    String lastUpdated, String versionName,
                    String category) {
         this.appName = appName;
@@ -26,6 +27,7 @@ public class AppInfo {
         this.icon = icon;
         this.permissions = permissions;
         this.installSize = installSize;
+        this.installSizeBytes = installSizeBytes;
         this.installDate = installDate;
         this.lastUpdated = lastUpdated;
         this.versionName = versionName;

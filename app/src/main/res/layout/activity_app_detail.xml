@@ -22,7 +22,7 @@
             android:layout_marginEnd="8dp"
             android:src="@drawable/ic_back_arrow"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Back" />
+            android:contentDescription="@string/cd_back" />
 
         <ImageView
             android:id="@+id/appIcon"
@@ -63,7 +63,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="8dp"
-        android:text="Open app settings"
+        android:text="@string/open_settings"
         style="@style/Widget.Material3.Button.OutlinedButton" />
 
     <!-- Scrollable body -->
@@ -101,7 +101,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="APP INFO"
+                        android:text="@string/app_info_header"
                         android:textSize="11sp"
                         android:textStyle="bold"
                         android:letterSpacing="0.08"
@@ -124,7 +124,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Size"
+                                android:text="@string/label_size"
                                 android:textSize="11sp"
                                 android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -147,7 +147,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Category"
+                                android:text="@string/label_category"
                                 android:textSize="11sp"
                                 android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -178,7 +178,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Installed"
+                                android:text="@string/label_installed"
                                 android:textSize="11sp"
                                 android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -201,7 +201,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Last updated"
+                                android:text="@string/label_last_updated"
                                 android:textSize="11sp"
                                 android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -231,7 +231,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Version"
+                                android:text="@string/label_version"
                                 android:textSize="11sp"
                                 android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -254,7 +254,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Permissions"
+                                android:text="@string/label_permissions"
                                 android:textSize="11sp"
                                 android:textColor="?attr/colorOnSurfaceVariant" />
 

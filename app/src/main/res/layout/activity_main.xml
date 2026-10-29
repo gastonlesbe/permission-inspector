@@ -41,7 +41,7 @@
             android:id="@+id/searchBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Search apps…"
+            android:hint="@string/search_hint"
             android:inputType="text"
             android:imeOptions="actionSearch" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order by"
+            android:text="@string/label_order_by"
             android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="@color/brand_primary"
@@ -75,7 +75,7 @@
                 android:id="@+id/chipPermissions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Permissions"
+                android:text="@string/label_permissions"
                 android:checked="true"
                 style="@style/Widget.Material3.Chip.Filter" />
 
@@ -83,14 +83,14 @@
                 android:id="@+id/chipName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/label_name"
                 style="@style/Widget.Material3.Chip.Filter" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipSize"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Size"
+                android:text="@string/label_size"
                 style="@style/Widget.Material3.Chip.Filter" />
 
         </com.google.android.material.chip.ChipGroup>
@@ -121,7 +121,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DEVICE-WIDE SETTINGS"
+            android:text="@string/device_wide_header"
             android:textSize="10sp"
             android:letterSpacing="0.1"
             android:gravity="center"
@@ -148,13 +148,13 @@
                 android:focusable="true"
                 android:elevation="3dp">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🎤" android:textSize="22sp" />
+                    android:text="@string/emoji_microphone" android:textSize="22sp" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Microphone" android:textSize="11sp"
+                    android:text="@string/perm_record_audio" android:textSize="11sp"
                     android:textColor="@color/brand_primary" android:textStyle="bold"
                     android:layout_marginTop="4dp" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="All apps →" android:textSize="10sp"
+                    android:text="@string/all_apps_arrow" android:textSize="10sp"
                     android:textColor="@color/brand_accent" />
             </LinearLayout>
 
@@ -172,13 +172,13 @@
                 android:focusable="true"
                 android:elevation="3dp">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="📍" android:textSize="22sp" />
+                    android:text="@string/emoji_location" android:textSize="22sp" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Location" android:textSize="11sp"
+                    android:text="@string/quick_location" android:textSize="11sp"
                     android:textColor="@color/brand_primary" android:textStyle="bold"
                     android:layout_marginTop="4dp" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="All apps →" android:textSize="10sp"
+                    android:text="@string/all_apps_arrow" android:textSize="10sp"
                     android:textColor="@color/brand_accent" />
             </LinearLayout>
 

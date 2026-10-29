@@ -48,7 +48,7 @@
                 android:id="@+id/permLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Open settings →"
+                android:text="@string/open_settings_arrow"
                 android:textSize="11sp"
                 android:textColor="?attr/colorPrimary"
                 android:layout_marginTop="6dp"

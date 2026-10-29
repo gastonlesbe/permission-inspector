@@ -182,9 +182,9 @@ public class MainActivity extends AppCompatActivity {
         MenuItem versionItem = menu.findItem(R.id.version);
         if (versionItem != null) {
             try {
-                versionItem.setTitle("v" + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+                versionItem.setTitle(getString(R.string.version_format, getPackageManager().getPackageInfo(getPackageName(), 0).versionName));
             } catch (PackageManager.NameNotFoundException e) {
-                versionItem.setTitle("v1.3");
+                versionItem.setTitle(R.string.version_fallback);
             }
             versionItem.setEnabled(false);
         }
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("plain/text");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"lesberweb@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Permission Inspector");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
         startActivity(Intent.createChooser(intent, ""));
     }
 }
