@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Required to query installed apps on Android 11+ -->
+    <!-- Implied by screenOrientation (app + ad SDK activities) and ACCESS_WIFI_STATE (ad SDKs); not required to run -->
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.INTERNET" />
